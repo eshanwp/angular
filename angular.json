@@ -23,9 +23,27 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/font-awesome/css/font-awesome.css",
+              "src/assets/css/plugins/toastr/toastr.min.css",
+              "src/assets/css/plugins/dataTables/datatables.min.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/mystyle.css",
+              "src/assets/css/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-2.1.1.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/plugins/metisMenu/jquery.metisMenu.js",
+              "src/assets/js/plugins/slimscroll/jquery.slimscroll.min.js",
+              "src/assets/js/plugins/peity/jquery.peity.min.js",
+              "src/assets/js/inspinia.js",
+              "src/assets/js/plugins/pace/pace.min.js",
+              "src/assets/js/plugins/jquery-ui/jquery-ui.min.js",
+              "src/assets/js/plugins/toastr/toastr.min.js",
+              "src/assets/js/plugins/dataTables/datatables.min.js"
+            ]
           },
           "configurations": {
             "production": {
