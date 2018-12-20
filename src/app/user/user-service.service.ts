@@ -22,7 +22,7 @@ export class UserServiceService {
   }
 
   private extractData(res: Response) {
-    let body = res;
+    const body = res;
     // console.log(res);
     return body || {  };
   }
@@ -43,7 +43,7 @@ export class UserServiceService {
 
   // Get the current data
   showTodayDate() {
-    let ndate = new Date();
+    const ndate = new Date();
     return ndate;
   }
 
@@ -70,6 +70,13 @@ export class UserServiceService {
   updateUser (user): Observable<any> {
     return this.http.put<any>(endpoint + 'users', JSON.stringify(user), httpOptions).pipe(
       catchError(this.handleError<any>('updateUser'))
+    );
+  }
+
+  // Delete the user
+  deleteUser (id): Observable<any> {
+    return this.http.delete(endpoint + 'users/' + id).pipe(
+      catchError(this.handleError<any>('deleteUser'))
     );
   }
 

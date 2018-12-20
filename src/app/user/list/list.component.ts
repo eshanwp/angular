@@ -110,4 +110,13 @@ export class ListComponent implements OnInit {
     this.router.navigate(['user/form']);
   }
 
+  deleteUser(userId) {
+    this.userService.deleteUser(userId).subscribe((data) => {
+      this.loadData();
+      console.log('User has been successfully deleted');
+    }, (err) => {
+      console.log(err);
+    });
+  }
+
 }

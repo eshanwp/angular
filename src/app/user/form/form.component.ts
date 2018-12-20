@@ -35,6 +35,7 @@ export class FormComponent implements OnInit {
     const userId = window.localStorage.getItem('userId');
 
     this.registerForm = this.formBuilder.group({
+      id: [''],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       userName: ['', [Validators.required, Validators.minLength(6)]],
@@ -46,8 +47,9 @@ export class FormComponent implements OnInit {
 
   getUser(userId) {
     this.userService.getUser(userId).subscribe((data) => {
+      console.log(data);
       this.registerForm.setValue(data);
-      // this.users = data;
+      this.users = data;
     });
   }
 
