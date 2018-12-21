@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 declare var $: any;
+import Swal from 'sweetalert2';
 
 class User {
   id: number;
@@ -113,9 +114,23 @@ export class ListComponent implements OnInit {
   deleteUser(userId) {
     this.userService.deleteUser(userId).subscribe((data) => {
       this.loadData();
-      console.log('User has been successfully deleted');
+      Swal({
+        type: 'success',
+        title: 'User has been successfully deleted',
+        showConfirmButton: false,
+        timer: 2000
+      });
     }, (err) => {
       console.log(err);
+    });
+  }
+
+  cancelPopup () {
+    Swal({
+      type: 'info',
+      title: 'Your response has been safe',
+      showConfirmButton: false,
+      timer: 1500
     });
   }
 

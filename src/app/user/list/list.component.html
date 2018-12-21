@@ -38,10 +38,16 @@
                   </a>
 
                   <a title="Delete">
-                    <button (click)="deleteUser(user.id)" type="button" class="btn button-shadow btn-delete">
+                    <button (click)="confirmFileDeletionSwal.show()" type="button" class="btn button-shadow btn-delete">
                       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </button>
                   </a>
+
+                  <swal #confirmFileDeletionSwal
+                        title="Are you sure want to delete it?" text="Delete record" type="warning"
+                        [options]="{ showCancelButton: true,  confirmButtonText: 'Yes, deleted!',  confirmButtonColor: '#DD6B55' }"
+                        (confirm)="deleteUser(user.id)"
+                        (cancel)="cancelPopup()"></swal>
 
                 </td>
               </tr>

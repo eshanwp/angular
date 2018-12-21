@@ -19,6 +19,7 @@ import { UserServiceService } from './user/user-service.service';
 import { FormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import * as $ from 'jquery';
 
 
@@ -41,7 +42,8 @@ import * as $ from 'jquery';
     HttpClientModule,
     FormsModule,
     DataTablesModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent]
